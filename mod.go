@@ -32,8 +32,8 @@ type basic interface {
 		~complex64 | ~complex128
 }
 
-// P creates a value pointer from a basic value.
-func P[T basic](x T) *T {
+// P creates a value pointer from a value. Use with care.
+func P[T any](x T) *T {
 	return &x
 }
 
