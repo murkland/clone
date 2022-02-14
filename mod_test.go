@@ -34,9 +34,9 @@ func TestCloneMap(t *testing.T) {
 	}
 }
 
-func TestBasic(t *testing.T) {
+func TestShallow(t *testing.T) {
 	xp := clone.P(1)
-	yp := clone.Basic(xp)
+	yp := clone.Shallow(xp)
 	*xp = 500
 
 	if *yp != 1 {
@@ -44,8 +44,8 @@ func TestBasic(t *testing.T) {
 	}
 }
 
-func TestBasicNil(t *testing.T) {
-	if clone.Basic[int](nil) != nil {
+func TestShallowNil(t *testing.T) {
+	if clone.Shallow[int](nil) != nil {
 		t.Errorf("nil value pointer was not copied")
 	}
 }
