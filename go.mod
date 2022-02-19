@@ -1,3 +1,3 @@
-module github.com/nbarena/clone
+module github.com/undernet/clone
 
 go 1.18

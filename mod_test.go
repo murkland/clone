@@ -3,7 +3,7 @@ package clone_test
 import (
 	"testing"
 
-	"github.com/nbarena/clone"
+	"github.com/undernet/clone"
 )
 
 type foo struct {
