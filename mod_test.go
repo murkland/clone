@@ -3,7 +3,7 @@ package clone_test
 import (
 	"testing"
 
-	"github.com/undernet/clone"
+	"github.com/yumland/clone"
 )
 
 type foo struct {

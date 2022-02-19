@@ -1,3 +1,3 @@
-module github.com/undernet/clone
+module github.com/yumland/clone
 
 go 1.18
