@@ -65,3 +65,36 @@ func TestCloneValuePointerNil(t *testing.T) {
 		t.Errorf("nil value pointer was not cloned")
 	}
 }
+
+type bar interface {
+	clone.Cloner[bar]
+	baz() int
+}
+
+type foobar struct {
+	x int
+}
+
+func (f *foobar) Clone() bar {
+	return &foobar{f.x}
+}
+
+func (f *foobar) baz() int {
+	return f.x
+}
+
+func TestCloneInterface(t *testing.T) {
+	x := &foobar{1}
+	y := clone.Interface[bar](x)
+	x.x = 500
+
+	if y.baz() != 1 {
+		t.Errorf("interface pointer was not cloned")
+	}
+}
+
+func TestCloneInterfaceNil(t *testing.T) {
+	if clone.Interface[bar](nil) != nil {
+		t.Errorf("nil value pointer was not cloned")
+	}
+}
