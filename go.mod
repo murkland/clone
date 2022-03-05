@@ -1,3 +1,3 @@
-module github.com/yumland/clone
+module github.com/murkland/clone
 
 go 1.18
